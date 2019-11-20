@@ -1,0 +1,303 @@
+@charset "UTF-8";
+:root {
+  --top-font-size: calc(3rem + ((1vw - 0.64rem) * 2.1429));
+  --main-font-size: calc(2.4rem + ((1vw - 0.64rem) * 2.1429));
+  --sub-font-size: calc(2.2rem + ((1vw - 0.64rem) * 2.1429));
+  --index-font-size: calc(1.6rem + ((1vw - 0.64rem) * 2.1429));
+  --description-font-size: calc(1.8rem + ((1vw - 0.64rem) * 2.1429));
+  --img-circle-size: calc(12rem + ((1vw - 0.64rem) * 2.1429));
+  --base-padding: 0 3rem 1rem;
+  --main-color: #ff8500;
+  --sub-color: #ffbb00;
+  --third-color: #fff6eb;
+  --sp-button-size: calc(6rem + ((1vw - 0.64rem) * 2.1429));
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  max-width: 100%;
+  font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+}
+
+/*header*/
+.pc_br {
+  display: none;
+}
+
+.top_main {
+  background: -moz-linear-gradient(bottom, var(--main-color), var(--sub-color));
+  background: -webkit-linear-gradient(bottom, var(--main-color), var(--sub-color));
+  background: linear-gradient(to top, var(--main-color), var(--sub-color));
+  text-align: center;
+  padding-bottom: 0.8rem;
+}
+
+.top_fanguild_logo {
+  width: 60%;
+}
+
+h1 {
+  margin-top: 0;
+  padding-top: calc(1.6rem + ((1vw - 0.64rem) * 2.1429));
+}
+
+.top_message {
+  font-size: var(--top-font-size);
+  font-weight: 700;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.top_main_explanation {
+  margin-top: var(--main-font-size);
+  padding: var(--base-padding);
+  font-size: 1.6rem;
+}
+
+/*詳しく見るボタン*/
+.can_box *, .can_box *:before, .can_box *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.can_box {
+  position: relative;
+}
+
+.can_box label {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  border: 0.1rem solid var(--main-color);
+  margin: 0;
+}
+
+.can_box label:after {
+  font-weight: 700;
+  font-size: var(--sub-font-size);
+  color: var(--main-color);
+  position: absolute;
+  z-index: 2;
+  bottom: -3rem;
+  left: 50%;
+  width: calc(24rem + ((1vw - 0.64rem) * 2.1429));
+  line-height: var(--sp-button-size);
+  content: '詳しく見る';
+  transform: translate(-50%, 0);
+  background-color: #fff;
+  border: 0.2rem solid var(--main-color);
+  border-radius: calc(20rem + ((1vw - 0.64rem) * 2.1429));
+}
+
+.can_box input {
+  display: none;
+}
+
+.can_box .can_container {
+  overflow: hidden;
+  height: calc(18rem + ((1vw - 0.64rem) * 2.1429)); /* 開く前に見えている部分の高さ */
+  transition: all 0.5s;
+  font-size: calc(2rem + ((1vw - 0.64rem) * 2.1429));
+}
+
+.can_box input:checked + label:after {
+  font-weight: 700;
+  content: '閉じる';
+}
+.can_box input:checked ~ .can_container {
+  height: auto;
+  transition: all 0.5s;
+}
+
+
+.about {
+  padding-top: 2rem;
+}
+
+.index {
+  font-size: var(--index-font-size);
+  font-weight: 700;
+  text-align: center;
+  color: #a0a0a0;
+}
+
+.about_fanguild_logo {
+  width: calc(12rem + ((1vw - 0.64rem) * 2.1429));
+}
+
+.about_introduction,
+.service_introduction {
+  font-size: var(--main-font-size);
+  font-weight: 700;
+  text-align: center;
+}
+
+.about_explanation {
+  font-size: calc(2rem + ((1vw - 0.64rem) * 2.1429));
+  text-align: center;
+  padding-bottom: 5rem;
+}
+
+.about_system {
+  text-align: center;
+  width: 100%;
+  padding: var(--base-padding);
+  background-color: var(--third-color);
+}
+
+.about_mean {
+  margin: 0;
+  padding: 3rem 0;
+  position: relative;
+
+}
+
+.number {
+  font-size: var(--top-font-size);
+  font-weight: 700;
+  color: var(--main-color);
+  position: absolute;
+  top: 2rem;
+  left: 30%;
+  font-style: italic;
+}
+
+.about_mean img {
+  border-radius: 50%;
+  border: 0.2rem solid var(--main-color);
+  width: var(--img-circle-size);
+  height: var(--img-circle-size);
+  object-fit: contain;
+}
+
+.description {
+  padding-top: 3rem;
+  font-size: var(--description-font-size);
+}
+
+.job_system_description {
+  margin-bottom: 5rem;
+}
+
+
+
+/*service*/
+.service {
+  width: 100%;
+  padding: 7rem 0 1rem;
+}
+
+.service_introduction {
+  padding-bottom: 2rem;
+}
+
+.service_box {
+  height: calc(20rem + ((1vw - 0.64rem) * 2.1429));
+}
+
+.guild_box {
+  background-image: linear-gradient(rgba(255, 187, 0, 0.3), rgba(255, 187, 0, 0.3)),url("../img/guild_box.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.join_box {
+  background-image: linear-gradient(rgba(255, 133, 0, 0.8), rgba(255, 133, 0, 0.8)),url("../img/join_box.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.fan_activity_box {
+  background-image: linear-gradient(rgba(255, 133, 0, 0.3), rgba(255, 133, 0, 0.3)),url("../img/fan_activity_box.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.box_title {
+  font-size: calc(2.8rem + ((1vw - 0.64rem) * 2.1429));
+  color: #fff;
+  font-weight: 700;
+  padding-top: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.box_caption {
+  color: #fff;
+  padding-left: 1.5rem;
+}
+
+.registration {
+  font-size: var(--main-font-size);
+  text-align: center;
+  font-weight: 700;
+  padding-top: 1.5rem;
+}
+
+.registration_caption {
+  text-align: center;
+  font-size: calc(2rem + ((1vw - 0.64rem) * 2.1429));
+}
+
+.registration_form {
+  margin-top: 2rem;
+  background-color: #fff6eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 15rem;
+}
+
+.registration_form button {
+  font-weight: 700;
+  font-size: var(--sub-font-size);
+  color: #fff;
+  line-height: var(--sp-button-size);
+  margin: 0 auto 1rem;
+  width: calc(24rem + ((1vw - 0.64rem) * 2.1429));
+  height: calc(6rem + ((1vw - 0.64rem) * 2.1429));
+  background: -moz-linear-gradient(bottom, var(--main-color), var(--sub-color));
+  background: -webkit-linear-gradient(bottom, var(--main-color), var(--sub-color));
+  background: linear-gradient(to top, var(--main-color), var(--sub-color));
+  border: none;
+  border-radius: calc(20rem + ((1vw - 0.64rem) * 2.1429));
+}
+
+.registration_form_caption {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+  font-size: var(--sub-font-size);
+  color: var(--main-color);
+}
+
+footer {
+  background-color: #484848;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+.footer-fanguild-logo {
+  width: 35%;
+}
+
+.footer_caption {
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0.5rem 0 2rem;
+}
+
+
